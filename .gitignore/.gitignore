@@ -1,0 +1,21 @@
+------------------------------------------------------------------------
+In Function.php file
+
+/*Access Statement pdf file*/
+
+function upload_user_file( $file = array(),$path ) {
+    if(!empty($file)) 
+    {
+        $upload_dir=$path;
+        $uploaded=move_uploaded_file($file['tmp_name'], $upload_dir.$file['name']);
+        if($uploaded) 
+        {
+            echo "<h3>".''."Uploaded Pdf File Successfully".''."</h3>";
+        }
+        else
+        {
+            echo "<h3>".''."Please Upload Pdf File".''."</h3>";
+        }
+    } 
+
+}
